@@ -11,6 +11,17 @@ public class isSubsequence {
         }
         return true;
     }
+
+    static boolean isSub(String string , String sequence){
+        int n = string.length();
+        int idx =0;
+        for (int i=0;i<n;i++){
+           idx =  string.indexOf(sequence.charAt(i), idx);
+           if (idx == -1) return false;
+           idx++;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         String t = "ahbgdc";
         String s = "acb";
@@ -18,5 +29,6 @@ public class isSubsequence {
         String t1 = "bbaaaa";
         System.out.println(isSubsequence(s,t));
         System.out.println(isSubsequence(s1,t1));
+        System.out.println(isSub(t, s));
     }
 }

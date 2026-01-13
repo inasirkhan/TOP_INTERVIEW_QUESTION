@@ -15,12 +15,22 @@ public class MergeTwoSortedArray {
 		
 		Arrays.sort(arr1);
 	}
+	public static void merge2(int[] a1,int n, int[] a2, int m){
+
+		for(int i=0;i<m;i++){
+			a1[n] = a2[i];
+			n++;
+		}
+		Arrays.toString(a1);
+
+	}
 	
 	public static void main(String[] args) {
 		int arr1[] = {1,2,3,0,0,0};
 		int arr2[] = {2,5,6};
-		merge(arr1 , 3, arr2,3);
+		merge2(arr1 , 3, arr2,3);
 		System.out.println(Arrays.toString(arr1));
+
 	}
 
 	

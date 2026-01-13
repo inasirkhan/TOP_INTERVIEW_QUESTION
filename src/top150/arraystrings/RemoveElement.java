@@ -13,11 +13,22 @@ public class RemoveElement {
 				}
 			}
 			return j;
-}
+	}
+
+	static int removeElementP(int[] arr, int val){
+		 int n = arr.length;
+		 int j=0;
+		 for (int i=0;i<n;i++){
+			 if (arr[i]!=val){
+				 arr[j++] = arr[i];
+			 }
+		 }
+		 return j;
+	}
 	
 	public static void main(String[] args) {
 		int[] arr = {3,2,2,1};
-		System.out.println(removeElement(arr, 3));
+		System.out.println(removeElementP(arr, 3));
 		System.out.println(Arrays.toString(arr));
 	}
 

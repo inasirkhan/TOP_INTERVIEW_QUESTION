@@ -15,6 +15,18 @@ public class JumpGame {
 		 
 		 return false;
 	    }
+
+		static boolean canJumpPrac(int[] arr){
+		 int n = arr.length;
+		 int jump =0;
+		 if (n==1) return true;
+		 for (int i = 0; i<n-1 && jump>=i; i++){
+			 jump = Math.max(jump, i+arr[i]);
+			 if (jump>=n-1) return true;
+		 }
+		 return false;
+		}
+
 	
 	public static void main(String[] args) {
 		int[] arr = {2,3,1,1,4};

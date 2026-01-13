@@ -16,5 +16,12 @@ public class ListNumberingInMap {
                 ));
 
         System.out.println(collect);
+
+        list.stream().collect(
+                Collectors.toMap(
+                        e-> list.indexOf(e)+1,
+                        e->e
+                )
+        );
     }
 }

@@ -1,5 +1,7 @@
 package top150.arraystrings;
 
+import java.util.Arrays;
+
 public class TrappingRainWater {
 
         public static int trap(int[] height) {
@@ -11,12 +13,12 @@ public class TrappingRainWater {
             for (int i=1;i<n;i++){
                 leftMax[i] = Math.max(leftMax[i-1],height[i]);
             }
-
+            System.out.println("LEFT MAX :: "+Arrays.toString(leftMax));
             rightMax[n-1] = height[n-1];
             for (int j=n-2;j>=0;j--){
                 rightMax[j] = Math.max(rightMax[j+1], height[j]);
             }
-
+            System.out.println("RIGHT MAX :: "+ Arrays.toString(rightMax));
             for (int i=0;i<n;i++){
                 maxWater+= Math.min(leftMax[i], rightMax[i])- height[i];
             }

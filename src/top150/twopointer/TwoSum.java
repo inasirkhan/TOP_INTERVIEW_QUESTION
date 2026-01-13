@@ -25,9 +25,24 @@ public class TwoSum {
         return ans;
     }
 
+
+    public static void twoSum2(int[] arr,int sum){
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for (int i=0;i<arr.length-1;i++){
+            int remaining = sum - arr[i];
+            if (map.containsKey(remaining)){
+                System.out.println(i+" "+map.get(sum-arr[i]));
+            }
+            map.put(arr[i],i);
+        }
+    }
+
     public static void main(String[] args) {
-        int arr[] = {2,7,11,15};
+        int arr[] = {2,7,1,11,15};
+//        Arrays.sort(arr);
         int target = 9;
-        System.out.println(Arrays.toString(twoSum(arr, target)));
+//        System.out.println(Arrays.toString(twoSum(arr, target)));
+        twoSum2(arr, 9);
     }
 }
