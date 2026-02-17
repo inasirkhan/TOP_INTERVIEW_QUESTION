@@ -13,9 +13,16 @@ class RealInternet implements Internet{
     }
 }
 
+//❌ Problem: static proxy
+//
+//You must write one proxy class per interface
+//
+//Not scalable if many interfaces need filtering
+//
+//👉 Dynamic Proxy fixes this.
 class ProxyInternet implements Internet{
 
-    private RealInternet realInternet;
+    private Internet realInternet;
 
     ProxyInternet(RealInternet realInternet){
         this.realInternet = realInternet;
