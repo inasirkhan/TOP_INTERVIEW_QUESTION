@@ -58,6 +58,47 @@ public class SecondHighestSalary {
         Map<Long, List<Integer>> collect = employees.stream()
                 .collect(Collectors.groupingBy(e -> e.getSalary(), Collectors.mapping(e -> e.id, Collectors.toList())));
         System.out.println(collect);
+
+        List<Employee> salDes = employees.stream().sorted((e1, e2) -> Long.compare(e1.getSalary(), e2.getSalary())).collect(Collectors.toList());
+        System.out.println(salDes);
+
+        Optional<Employee> ankita = employees.stream().filter(e -> e.name.equalsIgnoreCase("ankita")).findFirst();
+        System.out.println(ankita.get());
+
+//        HIGHEST SALARY OF EACH DEPARTMENT
+        Map<String, Optional<Employee>> collect1 = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparingLong(Employee::getSalary))));
+        System.out.println(collect1);
+
+//        distinct() removes duplicates based on equals and hashCode,
+//        not based on salary. Therefore it cannot be used directly
+//        to find second highest salary unless equals is overridden on salary.
+
+//        SECOND HIGHEST SALARY
+        Optional<Long> first = employees.stream()
+                .map(Employee::getSalary)
+                        .distinct()
+                                .sorted(Comparator.reverseOrder())
+                                        .skip(1)
+                                                .findFirst();
+        System.out.println("Second Highest Salary : "+first.get());
+//        SECOND HIGHEST SALARY EMPLOYEE
+        Optional<Employee> second = employees.stream().map(Employee::getSalary)
+                .distinct().sorted(Comparator.reverseOrder()).skip(1)
+                .findFirst()
+                .flatMap(sal -> employees.stream().filter(emp -> Objects.equals(emp.getSalary(), sal)).findFirst());
+        System.out.println("Second Highest Salary Employee : "+second.get());
+
+        Optional<Employee> first1 = employees.stream()
+                .sorted(Comparator.comparingLong(Employee::getSalary).reversed())
+                .distinct()
+                .skip(1)
+                .findFirst();
+        System.out.println(first1.get());
+
+//        Salary between 20k to 35k
+        List<Employee> list1 = employees.stream().filter(emp -> emp.getSalary() >= 20000 && emp.getSalary() <= 35000).toList();
+        System.out.println(list1);
+
     }
 
     static class Employee {

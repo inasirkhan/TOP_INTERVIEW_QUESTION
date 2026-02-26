@@ -1,4 +1,4 @@
-package top150.deqode.intuit;
+package top150.deqode.intuit.day1;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -11,5 +11,7 @@ public class LongestStringInList {
         List<String> list = Arrays.asList("Nass","Deepak","Mohit", "Salman","Shahrukh");
         Optional<String> maxLengthString = list.stream().max(Comparator.comparing(String::length));
         System.out.println(maxLengthString.get());
+        Optional<String> max = list.stream().max(Comparator.comparing(String::length));
+        System.out.println(max.get());
     }
 }

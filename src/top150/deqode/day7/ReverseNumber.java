@@ -11,7 +11,7 @@ public class ReverseNumber {
     private static int reverseNumber(int number) {
         int rev = 0;
         int t;
-        while (number>0){
+        while (number!=0){
             t = number%10;
             rev = rev*10 + t;
             number =number/10;

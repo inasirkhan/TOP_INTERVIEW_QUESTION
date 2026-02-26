@@ -5,24 +5,21 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class PluseOnesolution {
+public class PlusOneSolution {
     public static int[] plusOne(int[] digits) {
-        String res = "";
-        for(int i=0;i<digits.length;i++){
-            res+=digits[i];
-        }
-        Integer num = Integer.parseInt(res);
-        System.out.println(num);
-        num++;
-        System.out.println(num);
-        List<Integer> list = new ArrayList<Integer>();
-        while(num>0){
-            int last = num%10;
-            list.add(last);
-            num = num/10;
-        }
-        Collections.reverse(list);
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        int n = digits.length;
+       for(int i = n-1;i>=0;i--){
+           if (digits[i]== 9){
+               digits[i] = 0;
+           }
+           else {
+               digits[i]++;
+               return digits;
+           }
+       }
+       digits = new int[n+1];
+       digits[0] = 1;
+       return digits;
     }
 
 

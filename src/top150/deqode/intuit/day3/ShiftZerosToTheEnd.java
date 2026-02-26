@@ -1,4 +1,4 @@
-package top150.deqode.intuit;
+package top150.deqode.intuit.day3;
 
 import java.util.Arrays;
 
@@ -13,7 +13,6 @@ public class ShiftZerosToTheEnd {
     private static void shiftZeroes(int[] arr) {
         int n = arr.length;
         int j = 0;
-        int countZero = 0;
         for (int i=0;i<n;i++){
             if (arr[i]!=0){
                 arr[j++] = arr[i];

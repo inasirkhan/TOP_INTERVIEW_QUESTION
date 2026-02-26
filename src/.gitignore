@@ -1,0 +1,10 @@
+# IntelliJ
+.idea/
+
+# Build folders
+out/
+target/
+build/
+
+# Compiled files
+*.class

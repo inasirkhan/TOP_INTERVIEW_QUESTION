@@ -1,4 +1,4 @@
-package top150.deqode.desingpattern;
+package top150.deqode.desingpattern.stuctural;
 
 interface Device{
     void TurnOn();

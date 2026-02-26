@@ -1,5 +1,10 @@
 package top150.practice3;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 public class ImpetusInterview {
 
     public static String swapNumber(String str){
@@ -29,7 +34,6 @@ public class ImpetusInterview {
         System.out.println(swapNumber(str));
         char[] L1= {'a','b','c'};
         int[] L2= {1,2,3};
-
 
         Thread t1 = new Thread(() -> {
             for (char c : L1) {

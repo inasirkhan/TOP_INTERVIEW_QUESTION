@@ -12,13 +12,13 @@ public class SubArrayWithGivenSum {
             if (current == sum) {
                 end = i;
                 System.out.println("start : "+start+"  end : "+end);
-                maxLength = Math.min(maxLength, end - start + 1);
+                maxLength = Math.max(maxLength, end - start + 1);
             }
             if (map.containsKey(current-sum)) {
                 start = map.get(current-sum)+1;
                 end = i;
                 System.out.println("start : "+start+"  end : "+end);
-                maxLength = Math.min(maxLength, end - start + 1);
+                maxLength = Math.max(maxLength, end - start + 1);
             }
             map.put(current, i);
         }

@@ -1,4 +1,4 @@
-package top150.deqode.desingpattern;
+package top150.deqode.desingpattern.creational;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

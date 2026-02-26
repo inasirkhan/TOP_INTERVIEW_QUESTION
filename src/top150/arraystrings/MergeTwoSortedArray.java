@@ -1,6 +1,7 @@
 package top150.arraystrings;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class MergeTwoSortedArray {
 
@@ -28,8 +29,11 @@ public class MergeTwoSortedArray {
 	public static void main(String[] args) {
 		int arr1[] = {1,2,3,0,0,0};
 		int arr2[] = {2,5,6};
-		merge2(arr1 , 3, arr2,3);
+//		merge2(arr1 , 3, arr2,3);
 		System.out.println(Arrays.toString(arr1));
+		int[] array = IntStream.concat(Arrays.stream(arr1), Arrays.stream(arr2)).sorted().toArray();
+		System.out.println(Arrays.toString(array));
+
 
 	}
 

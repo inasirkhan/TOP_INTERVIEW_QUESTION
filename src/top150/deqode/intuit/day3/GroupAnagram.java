@@ -1,4 +1,4 @@
-package top150.deqode.intuit;
+package top150.deqode.intuit.day3;
 
 import java.util.Arrays;
 import java.util.List;

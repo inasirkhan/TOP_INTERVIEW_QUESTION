@@ -34,7 +34,7 @@ public class PrintNumberUsingStream {
 //       all zeros on right side
         List<Integer> collect1 = Stream.concat(Arrays.stream(arr).boxed().filter(n -> n != 0), Arrays.stream(arr).boxed().filter(n -> n == 0)).collect(Collectors.toList());
         System.out.println(collect1);
-
+;
 
         int[] arr2 = {10, 20, 30, 40};
         int second =

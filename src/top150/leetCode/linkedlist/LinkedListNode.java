@@ -1,15 +1,27 @@
 package top150.leetCode.linkedlist;
 
-class LinkedListNode<T>
+public class LinkedListNode<T>
 {
     T data;
-    LinkedListNode<T> next;
+    public LinkedListNode<T> next;
     public LinkedListNode(T data)
     {
         this.data = data;
     }
     @Override
     public String toString() {
-        return "LinkedListNode [data=" + data + ", next=" + next + "]";
+        StringBuilder sb = new StringBuilder();
+        LinkedListNode current = this;
+
+        while (current != null) {
+            sb.append(current.data);
+            if (current.next != null) {
+                sb.append(" -> ");
+            }
+            current = current.next;
+        }
+        sb.append(" -> null");
+
+        return sb.toString();
     }
 }

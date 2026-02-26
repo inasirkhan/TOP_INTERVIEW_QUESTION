@@ -1,4 +1,4 @@
-package top150.deqode.intuit;
+package top150.deqode.intuit.concept;
 
 class A{
 

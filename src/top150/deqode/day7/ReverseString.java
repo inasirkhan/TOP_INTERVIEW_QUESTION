@@ -15,6 +15,18 @@ public class ReverseString {
                         StringBuilder::append)
                 .reverse().toString();
         System.out.println(reverse);
+        System.out.println(reverse);
+
+        String reduce = Stream.of(str.split(""))
+                .reduce("", (a, b) -> b + a);
+
+//        reduce() is a terminal operation in Java Stream API.
+//        It is used to:
+//        Combine all elements of a stream into a single result.
+
+        System.out.println(reduce);
+
+
     }
 
     private static String reverseStr(String str) {

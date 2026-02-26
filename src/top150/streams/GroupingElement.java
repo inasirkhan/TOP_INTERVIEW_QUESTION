@@ -56,5 +56,6 @@ public class GroupingElement {
         int[] arr = {1,0,1,1,0,0,1,1};
         Map<Integer, Long> longMap = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(longMap);
+
     }
 }

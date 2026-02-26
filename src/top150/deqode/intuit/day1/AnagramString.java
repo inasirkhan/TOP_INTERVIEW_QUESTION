@@ -1,4 +1,4 @@
-package top150.deqode.intuit;
+package top150.deqode.intuit.day1;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -37,17 +37,12 @@ public class AnagramString {
     }
 
     private static boolean isAnagram(String s1, String s2) {
-        String string1 = Stream.of(s1.split(""))
+        return Stream.of(s1.split(""))
                 .map(String::toUpperCase)
                 .sorted()
-                .collect(Collectors.joining());
-
-        System.out.println(string1);
-        String string2 = Stream.of(s2.split(""))
+                .collect(Collectors.joining()).equals(Stream.of(s2.split(""))
                 .map(String::toUpperCase)
                 .sorted()
-                .collect(Collectors.joining());
-        System.out.println(string2);
-        return string1.equals(string2);
+                .collect(Collectors.joining()));
     }
 }

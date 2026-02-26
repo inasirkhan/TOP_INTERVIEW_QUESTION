@@ -1,4 +1,4 @@
-package top150.deqode.desingpattern;
+package top150.deqode.desingpattern.stuctural;
 
 
 import java.lang.reflect.InvocationHandler;
@@ -7,9 +7,9 @@ import java.lang.reflect.Proxy;
 
 class InternetInvocationHandler implements InvocationHandler {
 
-    private final Internet realInternet;
+    private final top150.deqode.desingpattern.stuctural.Internet realInternet;
 
-    public InternetInvocationHandler(Internet realInternet) {
+    public InternetInvocationHandler(top150.deqode.desingpattern.stuctural.Internet realInternet) {
         this.realInternet = realInternet;
     }
 

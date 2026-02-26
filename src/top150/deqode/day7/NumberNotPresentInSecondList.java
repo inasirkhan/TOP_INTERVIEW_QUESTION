@@ -2,6 +2,8 @@ package top150.deqode.day7;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class NumberNotPresentInSecondList {
 
@@ -13,8 +15,8 @@ public class NumberNotPresentInSecondList {
     }
 
     private static Integer findMissing(int[] arr, int[] arr2) {
-        List<Integer> list = Arrays.stream(arr).boxed().toList();
-        List<Integer> list2 = Arrays.stream(arr2).boxed().toList();
+        Set<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toSet());
+        Set<Integer> list2 = Arrays.stream(arr2).boxed().collect(Collectors.toSet());
         for (Integer integer : list) {
             if (!list2.contains(integer)) {
                 return integer;

@@ -10,6 +10,11 @@ public class CommonCharsInStrings {
         String str2 = "Nass";
         Set<Character> commonChars = findCommonChars(str1, str2);
         System.out.println(commonChars);
+
+        str1.chars()
+                .mapToObj(c->(char)c)
+                .filter(c->str2.indexOf(c) != -1)
+                .forEach(c->System.out.printf(String.valueOf(c)));
     }
 
     private static Set<Character> findCommonChars(String str1, String str2) {

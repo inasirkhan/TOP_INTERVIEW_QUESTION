@@ -1,9 +1,7 @@
-package top150.deqode.intuit;
+package top150.deqode.intuit.day1;
 
 import java.util.Arrays;
-import java.util.stream.BaseStream;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class ShiftZerosToEnd {
 

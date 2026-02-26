@@ -1,4 +1,4 @@
-package top150.deqode.desingpattern;
+package top150.deqode.desingpattern.creational;
 
 interface Developer{
     void getName();

@@ -1,4 +1,4 @@
-package top150.designpatters;
+package top150.designpatters.creatinal;
 
 class Phone{
 

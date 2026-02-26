@@ -31,5 +31,12 @@ public class CountCharsInString {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         System.out.println(countMap2);
+
+        Map<Character, Long> collect = str.chars().mapToObj(c -> (char) c)
+                .filter(c->!Character.isWhitespace(c))
+                .map(Character::toUpperCase)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+
+        System.out.println(collect);
     }
 }

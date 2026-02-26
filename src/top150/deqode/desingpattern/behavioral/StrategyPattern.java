@@ -1,4 +1,4 @@
-package top150.deqode.desingpattern;
+package top150.deqode.desingpattern.behavioral;
 
 
 import java.util.HashMap;
